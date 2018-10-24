@@ -7,12 +7,15 @@
 </template>
 
 <style lang="sass">
+@include font('Kollektif-bold', './assets/fonts/kollektif/Kollektif-Bold')
+@include font('Lato', './assets/fonts/Lato/Lato-Regular')
+
 #app 
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  font-family: $fontFamilyMain
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
-  color: #2c3e50
+  color: $text
 
 #nav 
   padding: 30px
