@@ -13,9 +13,15 @@
   box-sizing: border-box
   outline: none
 
-#app 
-  font-family: $fontFamilyMain
+html
   font-size: 100%
+  @media screen and (min-width: $mediumBreakPoint)
+    font-size: 110%
+  @media screen and (min-width: $largeBreakPoint)
+    font-size: 120%
+
+#app
+  font-family: $fontFamilyMain
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: $text

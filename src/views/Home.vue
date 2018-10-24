@@ -41,6 +41,7 @@ export default {
   &__call
     font-family: inherit
     font-weight: 700
+    font-size: 0.7rem
     color: $bg-primary
     border: none
     width: 5rem
