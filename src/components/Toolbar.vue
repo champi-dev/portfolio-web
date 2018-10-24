@@ -29,7 +29,7 @@ export default {
     padding: 0.25rem 0
     &.router-link-active
       color: $text
-      box-shadow: 0px 3px 0px 0px $primary
+      box-shadow: 0px 8px 0px -5px $primary
 
     &:not(:last-child)
       margin-right: 0.8rem
