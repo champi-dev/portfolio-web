@@ -1,13 +1,13 @@
 <template lang="pug">
   .contact
-    .contact__form
+    form.contact__form
       .form-item(
         v-for="item in formItems"
         :key="item.id"
       )
         span.form-item__label {{ item.label }}
         input.form-item__input(
-          v-show="item.element === 'input'"
+          v-if="item.element === 'input'"
           :class="{ invalid: isInvalid(item.type, form[item.prop]) }"
           :type="item.type"
           :placeholder="item.placeholder"
@@ -15,7 +15,7 @@
           v-model="form[item.prop]"
         )
         textarea.form-item__textarea(
-          v-show="item.element === 'textarea'"
+          v-if="item.element === 'textarea'"
           :class="{ invalid: isInvalid(item.type, form[item.prop]) }"
           :placeholder="item.placeholder"
           v-model="form[item.prop]"
@@ -23,11 +23,21 @@
           rows="4"
         )
       
-      button.form-button(:class="{ invalid: oneElementEmpty }") Send message
+      button.form-button(
+        v-if="!sent"
+        type="submit"
+        :class="{ blocked: oneElementEmpty | sending }"
+        @click.prevent="submitHandler()"
+      ) {{ !sending ? 'Send Message' : 'Sending...' }}
+  
+      span.form-sent-msg(
+        v-else
+        :class="{ error: error }"
+      ) {{ !error ? "Message sent" : "Couldn't send message" }}
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name: 'Contact',
@@ -39,7 +49,10 @@ export default {
       email: null,
       about: null,
       message: null
-    }
+    },
+    sending: false,
+    sent: false,
+    error: false
   }),
 
   computed: {
@@ -100,6 +113,32 @@ export default {
       } else {
         return value.length <= 0
       }
+    },
+
+    submitHandler() {
+      if (!this.sending && !this.oneElementEmpty) {
+        this.submit()
+      }
+    },
+
+    submit() {
+      this.sending = true
+
+      axios
+        .post(`${process.env.VUE_APP_FIREBASE_URL}/messages.json`, {
+          ...this.form
+        })
+        .then(
+          () => {
+            this.sending = false
+            this.sent = true
+          },
+          () => {
+            this.sending = false
+            this.sent = true
+            this.error = true
+          }
+        )
     }
   }
 }
@@ -135,7 +174,8 @@ export default {
       font-size: 1rem
     &__input,
     &__textarea
-      font-size: 0.8rem
+      font-family: $fontFamilyMain
+      color: $text
       padding: 0.5rem
       border: 1px solid $border
       border-radius: 4px
@@ -145,4 +185,10 @@ export default {
   
   .form-button
     @include button
+  
+  .form-sent-msg
+    height: 2rem
+    color: $success
+    &.error
+      color: $danger
 </style>
