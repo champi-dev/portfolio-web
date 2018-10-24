@@ -3,33 +3,42 @@
     router-view
 </template>
 
-<style lang="sass">
-@include font('Kollektif', './assets/fonts/kollektif/Kollektif')
-@include font('Lato', './assets/fonts/Lato/Lato-Regular')
+<style lang="scss">
+@include font('Kollektif', './assets/fonts/kollektif/Kollektif');
+@include font('Lato', './assets/fonts/Lato/Lato-Regular');
 
-*
-  padding: 0
-  margin: 0
-  box-sizing: border-box
-  outline: none
-  -webkit-tap-highlight-color: transparent
+@import './assets/styles/nomalize.css';
 
-html
-  font-size: 100%
-  @media screen and (min-width: $mediumBreakPoint)
-    font-size: 110%
-  @media screen and (min-width: $largeBreakPoint)
-    font-size: 120%
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
-#app
-  font-family: $fontFamilyMain
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  color: $text
+html {
+  font-size: 100%;
+  @media screen and (min-width: $mediumBreakPoint) {
+    font-size: 110%;
+  }
+  @media screen and (min-width: $largeBreakPoint) {
+    font-size: 120%;
+  }
+}
 
-button, i
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  user-select: none
+#app {
+  font-family: $fontFamilyMain;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text;
+}
+
+button,
+i {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 </style>
