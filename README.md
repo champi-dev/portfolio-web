@@ -1,4 +1,4 @@
-# vue-scaffolding
+# Portfolio page
 
 ## Project setup
 

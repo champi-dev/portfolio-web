@@ -9,7 +9,10 @@ const resolve = {
     router$: path.resolve(__dirname, 'src/router.js'),
 
     // Store
-    store$: path.resolve(__dirname, 'src/store.js')
+    store$: path.resolve(__dirname, 'src/store.js'),
+
+    // Views
+    Home$: path.resolve(__dirname, 'src/views/Home.vue')
   }
 }
 
