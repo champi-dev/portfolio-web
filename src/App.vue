@@ -4,13 +4,14 @@
 </template>
 
 <style lang="sass">
-@include font('Kollektif-bold', './assets/fonts/kollektif/Kollektif-Bold')
+@include font('Kollektif', './assets/fonts/kollektif/Kollektif')
 @include font('Lato', './assets/fonts/Lato/Lato-Regular')
 
 *
   padding: 0
   margin: 0
   box-sizing: border-box
+  outline: none
 
 #app 
   font-family: $fontFamilyMain
