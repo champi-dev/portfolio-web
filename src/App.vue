@@ -12,6 +12,7 @@
   margin: 0
   box-sizing: border-box
   outline: none
+  -webkit-tap-highlight-color: transparent
 
 html
   font-size: 100%
@@ -25,4 +26,10 @@ html
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: $text
+
+button, i
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
 </style>

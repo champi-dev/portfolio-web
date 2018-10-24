@@ -12,7 +12,8 @@ const resolve = {
     store$: path.resolve(__dirname, 'src/store.js'),
 
     // Views
-    Home$: path.resolve(__dirname, 'src/views/Home.vue')
+    Home$: path.resolve(__dirname, 'src/views/Home.vue'),
+    Contact$: path.resolve(__dirname, 'src/views/Contact.vue')
   }
 }
 

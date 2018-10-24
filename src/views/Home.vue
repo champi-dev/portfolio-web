@@ -3,7 +3,7 @@
     header.home__header
       h1.home__title devsarmi.co
       h2.home__subtitle passion for web apps
-      button.home__call Hire me
+      router-link.home__call(to="/contact" tag="button") Contact me
 </template>
 
 <script>
@@ -16,8 +16,7 @@ export default {
 .home
   position: relative
   background: $bg-primary
-  width: 100vw
-  height: 100vh
+  @include full-screen
 
   &__header
     text-align: center
@@ -39,14 +38,5 @@ export default {
     margin-bottom: 3rem
   
   &__call
-    font-family: inherit
-    font-weight: 700
-    font-size: 0.7rem
-    color: $bg-primary
-    border: none
-    width: 5rem
-    height: 2rem
-    text-transform: uppercase
-    border-radius: 2rem
-    background-color: $primary
+    @include button
 </style>

@@ -4,3 +4,23 @@
     src: url($font-file+'.ttf') format('truetype')
     font-weight: normal
     font-style: normal
+
+@mixin full-screen
+  width: 100vw
+  height: 100vh
+
+@mixin button
+  cursor: pointer
+  font-family: inherit
+  font-weight: 700
+  font-size: 0.7rem
+  color: $bg-primary
+  border: none
+  width: 7rem
+  height: 2rem
+  text-transform: uppercase
+  border-radius: 2rem
+  background-color: $primary
+  &.invalid
+    cursor: default
+    background-color: darken($primary, 10%) 
