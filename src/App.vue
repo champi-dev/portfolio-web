@@ -1,7 +1,21 @@
 <template lang="pug">
   div(id="app")
+    toolbar
     router-view
 </template>
+
+<script>
+import Toolbar from 'Toolbar'
+
+export default {
+  name: 'App',
+
+  components: {
+    Toolbar
+  }
+}
+</script>
+
 
 <style lang="scss">
 @include font('Kollektif', './assets/fonts/kollektif/Kollektif');
