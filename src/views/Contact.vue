@@ -147,6 +147,7 @@ export default {
 <style lang="sass" scoped>
 .contact
   position: relative
+  background-color: $bg-primary
   @include full-screen
 
   &__form
