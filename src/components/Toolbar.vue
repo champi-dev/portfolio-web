@@ -2,7 +2,7 @@
   .toolbar
     router-link.toolbar__link(to="/" exact) Home
     router-link.toolbar__link(to="/contact" exact) Contact
-    router-link.toolbar__link(to="/work" exact) Work
+    //- router-link.toolbar__link(to="/work" exact) Work
 </template>
 
 <script>
