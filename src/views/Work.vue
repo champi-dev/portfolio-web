@@ -6,7 +6,8 @@
         :key="item.id"
       )
         span.link-item__label {{ item.label }}
-        .link-item__preview(:class="item.class")
+        a.link-item__link(:href="item.link")
+          .link-item__preview(:class="item.class")
 </template>
 
 <script>
@@ -18,7 +19,8 @@ export default {
       {
         id: 0,
         label: 'Transactions dashboard demo',
-        class: 'transactions-dashboard'
+        class: 'transactions-dashboard',
+        link: 'https://devsarmico-transactions.firebaseapp.com/'
       }
     ]
   })
@@ -38,6 +40,9 @@ export default {
     @include center
   
   .link-item
+    transition: all 0.3s ease-in-out
+    &:hover
+      transform: translateY(-5px)
     &__label
       font-size: 1.2rem
       line-height: 2
@@ -45,6 +50,9 @@ export default {
       width: 100%
       height: 26rem
       box-shadow: $shadowMainBox
+      transition: box-shadow 0.3s ease-in-out
+      &:hover
+        box-shadow: $shadowMainBox--raised
       &.transactions-dashboard
         background-image: url('../assets/images/transactions-dashboard-small.png')
         background-size: cover
