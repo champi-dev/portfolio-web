@@ -36,7 +36,7 @@ export default {
     background: $bg-primary
     width: 100% 
     max-width: $mediumBreakPoint
-    padding: 0 1rem
+    padding: 1rem
     @include center
   
   .link-item

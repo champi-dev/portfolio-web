@@ -153,7 +153,7 @@ export default {
     @include center
     width: 100%
     max-width: 24rem
-    padding: 0 1rem
+    padding: 1rem
 
   .form-item
     margin-bottom: 1rem

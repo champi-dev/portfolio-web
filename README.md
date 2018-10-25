@@ -29,3 +29,9 @@ yarn run lint
 ```
 yarn run test:unit
 ```
+
+### Deploy site
+
+```
+yarn run deploy
+```
