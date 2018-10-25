@@ -14,6 +14,7 @@ const resolve = {
     // Views
     Home$: path.resolve(__dirname, 'src/views/Home.vue'),
     Contact$: path.resolve(__dirname, 'src/views/Contact.vue'),
+    Work$: path.resolve(__dirname, 'src/views/Work.vue'),
 
     // Components
     Toolbar$: path.resolve(__dirname, 'src/components/Toolbar.vue')

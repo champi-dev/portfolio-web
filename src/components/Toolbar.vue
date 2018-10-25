@@ -2,6 +2,7 @@
   .toolbar
     router-link.toolbar__link(to="/" exact) Home
     router-link.toolbar__link(to="/contact" exact) Contact
+    router-link.toolbar__link(to="/work" exact) Work
 </template>
 
 <script>
@@ -22,6 +23,7 @@ export default {
   z-index: 2
   background-color: $bg-primary
   text-align: right
+  height: $toolbarHeight
 
   &__link
     color: lighten($text, 45%)

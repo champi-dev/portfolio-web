@@ -146,15 +146,11 @@ export default {
 
 <style lang="sass" scoped>
 .contact
-  position: relative
   background-color: $bg-primary
   @include full-screen
 
   &__form
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
+    @include center
     width: 100%
     max-width: 24rem
     padding: 0 1rem

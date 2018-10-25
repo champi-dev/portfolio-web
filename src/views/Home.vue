@@ -14,15 +14,14 @@ export default {
 
 <style lang="sass" scoped>
 .home
-  position: relative
   background: $bg-primary
   @include full-screen
 
   &__header
     text-align: center
     position: absolute
-    top: 50%
-    left: 50%
+    top: 50% 
+    left: 50% 
     transform: translate(-50%, -50%)
 
   &__title

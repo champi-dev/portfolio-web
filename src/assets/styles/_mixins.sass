@@ -7,7 +7,9 @@
 
 @mixin full-screen
   width: 100vw
-  height: 100vh
+  min-height: 100vh
+  padding-top: $toolbarHeight
+  padding-bottom: 1rem
 
 @mixin button
   cursor: pointer
@@ -24,3 +26,11 @@
   &.blocked
     cursor: default
     background-color: darken($primary, 10%) 
+
+@mixin center
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  @media screen and (min-height: 36.25rem)
+    top: 50%
+    transform: translate(-50%, -50%)
