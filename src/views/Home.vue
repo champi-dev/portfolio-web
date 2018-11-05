@@ -29,6 +29,7 @@ export default {
     font-weight: 400
     font-size: 2.5rem
     line-height: 1.6
+    margin-bottom: 0
   
   &__subtitle
     font-size: 1rem
