@@ -1,6 +1,7 @@
 <template lang="pug">
   .toolbar
     router-link.toolbar__link(to="/" exact) Home
+    router-link.toolbar__link(to="/about" exact) About
     router-link.toolbar__link(to="/contact" exact) Contact
     //- router-link.toolbar__link(to="/work" exact) Work
 </template>

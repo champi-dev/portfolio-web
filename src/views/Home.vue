@@ -3,7 +3,7 @@
     header.home__header
       h1.home__title devsarmi.co
       h2.home__subtitle passion for web apps
-      router-link.home__call(to="/contact" tag="button") Contact me
+      router-link.home__call(to="/about" tag="button") About me
 </template>
 
 <script>

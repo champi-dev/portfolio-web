@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from 'Home'
 import Contact from 'Contact'
-import Work from 'Work'
+import About from 'About'
+// import Work from 'Work'
 
 Vue.use(Router)
 
@@ -20,10 +21,15 @@ export default new Router({
       component: Contact
     },
     {
-      path: '/work',
-      name: 'work',
-      component: Work
+      path: '/about',
+      name: 'about',
+      component: About
     },
+    // {
+    //   path: '/work',
+    //   name: 'work',
+    //   component: Work
+    // },
     {
       path: '*',
       component: Home
