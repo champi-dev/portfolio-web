@@ -1,39 +1,40 @@
 <template lang="pug">
   .contact
-    form.contact__form
-      .form-item(
-        v-for="item in formItems"
-        :key="item.id"
-      )
-        span.form-item__label {{ item.label }}
-        input.form-item__input(
-          v-if="item.element === 'input'"
-          :class="{ invalid: isInvalid(item.type, form[item.prop]) }"
-          :type="item.type"
-          :placeholder="item.placeholder"
-          maxlength="255"
-          v-model="form[item.prop]"
+    .contact__form
+      form.form__wrapper
+        .form-item(
+          v-for="item in formItems"
+          :key="item.id"
         )
-        textarea.form-item__textarea(
-          v-if="item.element === 'textarea'"
-          :class="{ invalid: isInvalid(item.type, form[item.prop]) }"
-          :placeholder="item.placeholder"
-          v-model="form[item.prop]"
-          maxlength="255"
-          rows="4"
-        )
+          span.form-item__label {{ item.label }}
+          input.form-item__input(
+            v-if="item.element === 'input'"
+            :class="{ invalid: isInvalid(item.type, form[item.prop]) }"
+            :type="item.type"
+            :placeholder="item.placeholder"
+            maxlength="255"
+            v-model="form[item.prop]"
+          )
+          textarea.form-item__textarea(
+            v-if="item.element === 'textarea'"
+            :class="{ invalid: isInvalid(item.type, form[item.prop]) }"
+            :placeholder="item.placeholder"
+            v-model="form[item.prop]"
+            maxlength="255"
+            rows="4"
+          )
       
-      button.form-button(
-        v-if="!sent"
-        type="submit"
-        :class="{ blocked: oneElementEmpty | sending }"
-        @click.prevent="submitHandler()"
-      ) {{ !sending ? 'Send Message' : 'Sending...' }}
-  
-      span.form-sent-msg(
-        v-else
-        :class="{ error: error }"
-      ) {{ !error ? "Message sent" : "Couldn't send message" }}
+        button.form-button(
+          v-if="!sent"
+          type="submit"
+          :class="{ blocked: oneElementEmpty | sending }"
+          @click.prevent="submitHandler()"
+        ) {{ !sending ? 'Send Message' : 'Sending...' }}
+    
+        span.form-sent-msg(
+          v-else
+          :class="{ error: error }"
+        ) {{ !error ? "Message sent" : "Couldn't send message" }}
 </template>
 
 <script>
@@ -152,8 +153,11 @@ export default {
   &__form
     @include center
     width: 100%
-    max-width: 24rem
+    background-color: $bg-primary
     padding: 1rem
+    & .form__wrapper
+      max-width: $smallBreakPoint
+      margin: 0 auto
 
   .form-item
     margin-bottom: 1rem
