@@ -18,9 +18,9 @@ export default {
     linkItems: [
       {
         id: 0,
-        label: 'Transactions dashboard demo',
-        class: 'transactions-dashboard',
-        link: 'https://devsarmico-transactions.firebaseapp.com/'
+        label: 'react-playlist-player',
+        class: 'react-playlist-player',
+        link: 'https://react-playlist-player.firebaseapp.com/'
       }
     ]
   })
@@ -53,11 +53,9 @@ export default {
       transition: box-shadow 0.3s ease-in-out
       &:hover
         box-shadow: $shadowMainBox--raised
-      &.transactions-dashboard
-        background-image: url('../assets/images/transactions-dashboard-small.png')
+      &.react-playlist-player
+        background-image: url('../assets/images/react-playlist-player.png')
         background-size: cover
         background-repeat: no-repeat
-        background-position: top center
-        @media screen and (min-width: $mediumBreakPoint)
-          background-image: url('../assets/images/transactions-dashboard-large.png')
+        background-position: bottom center
 </style>
