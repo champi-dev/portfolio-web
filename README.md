@@ -1,6 +1,6 @@
 # Portfolio page
 
-[Open live demo](www.devsarmi.co)
+[Open live demo](https://devsarmi.co/)
 
 ## Project setup
 
