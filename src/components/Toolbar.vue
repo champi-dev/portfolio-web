@@ -1,8 +1,10 @@
 <template lang="pug">
   .toolbar
-    router-link.toolbar__link(to="/" exact) Home
-    router-link.toolbar__link(to="/about" exact) About
-    router-link.toolbar__link(to="/contact" exact) Contact
+    a.toolbar__github(href="https://github.com/devsarmico")
+    .toolbar__links
+      router-link.toolbar__link(to="/" exact) Home
+      router-link.toolbar__link(to="/about" exact) About
+      router-link.toolbar__link(to="/contact" exact) Contact
     //- router-link.toolbar__link(to="/work" exact) Work
 </template>
 
@@ -23,8 +25,10 @@ export default {
   padding: 1rem
   z-index: 2
   background-color: $bg-primary
-  text-align: right
   height: $toolbarHeight
+  display: flex
+  justify-content: space-between
+  align-items: center
 
   &__link
     color: lighten($text, 45%)
@@ -36,4 +40,11 @@ export default {
 
     &:not(:last-child)
       margin-right: 0.8rem
+  
+  &__github
+    background-image: url('../assets/images/github-logo.svg')
+    width: 2rem
+    height: 2rem
+    background-repeat: no-repeat
+    background-size: cover
 </style>
